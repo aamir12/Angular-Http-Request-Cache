@@ -1,0 +1,29 @@
+
+<h3>All request will be cached (Depend on header isCache and Get method)</h3>
+<input [(ngModel)] = "searchPostQuery"> <button (click)="searchPost()">Search</button><br/>
+<ul *ngIf="post$ | async as post">
+  <li  >
+    Id: {{post.id}}
+  </li>
+  <li>
+    Title: {{post.title}}
+  </li>
+  <li>
+    Description: {{post.body}}
+  </li>
+</ul>
+
+<h3>All request will not be cached</h3>
+<input [(ngModel)] = "searchTodoQuery"> <button (click)="searchTodo()">Search</button><br/>
+<ul *ngIf="todo$ | async as todo">
+  <li  >
+    Id: {{todo.id}}
+  </li>
+  <li>
+    Title: {{todo.title}}
+  </li>
+  <li>
+    completed: {{todo.completed}}
+  </li>
+</ul>
+
